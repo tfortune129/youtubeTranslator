@@ -26,8 +26,11 @@ export default defineEventHandler(async (event) => {
 
     // Initialize Open AI
     const openai = new OpenAI({
-        apiKey: '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'
+        apiKey: process.env.API_KEY
     })
+    // const openai = new OpenAI({
+    //     apiKey: 'XYZ'
+    // })
 
     // Send the prompt to Open AI using the model gpt-4-1106-preview
     let chatCompletion: any = await openai.chat.completions.create({

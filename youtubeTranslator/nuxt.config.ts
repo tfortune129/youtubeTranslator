@@ -9,5 +9,8 @@ export default defineNuxtConfig({
   ],
   primevue: {
     usePrimeVue: true
-  } 
+  }, 
+  publicRuntimeConfig: {
+    openaiApiKey: process.env.API_KEY
+  }
 })
