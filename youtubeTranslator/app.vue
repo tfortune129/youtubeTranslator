@@ -6,9 +6,9 @@
           <input v-model="youtube_url" type="text" placeholder="Enter youtube URL" class="input-field">
           <button @click="send" class="send-button">Send</button>
         </div>
-        <div class="summary-container">
+        <div class="summary-content">
           <div v-if="is_loading">Loading...</div>
-          <div v-else>
+          <div class="summary-font" v-else>
               {{ summary }}
         </div>
       </div>
@@ -54,6 +54,8 @@ body{
   color: black;
   font-size: 50px;
   font-weight: bold;
+  font-family: 'Lucida Console', monospace;
+
 }
 
 .input-container {
@@ -79,14 +81,20 @@ body{
   color: white;
   border: none;
   border-radius: 30px;
+  font-family: 'Lucida Console', monospace;
 }
 
-.summary-container {
+.summary-content {
   max-width: 800px;
   margin: 0 auto; 
   text-align: center;
+   
 }
 
+.summary-font {
+  font-family: 'Courier New', monospace;
+  font-size: 13px; 
+}
 /* .summary-container {
   border: 2px solid #333; 
   border-radius: 8px;
