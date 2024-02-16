@@ -26,7 +26,7 @@ export default defineEventHandler(async (event) => {
 
     // Initialize Open AI
     const openai = new OpenAI({
-        apiKey: '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'
+        apiKey: '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'
     })
 
     // Send the prompt to Open AI using the model gpt-4-1106-preview

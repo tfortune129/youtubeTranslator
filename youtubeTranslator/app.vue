@@ -1,13 +1,16 @@
 <template>
   <div class="d-flex justify-content-center">
     <div class="upper-left-text">Youtube Translator</div>
-      <!-- <h2 class="text-center">App</h2> -->
       <div class="center-container">
-        <input v-model="youtube_url" type="text" placeholder="Enter youtube URL">
-        <button @click="send">Send</button>
-        <div v-if="is_loading">Loading...</div>
-        <div v-else>
-           {{ summary }}
+        <div class="input-container">
+          <input v-model="youtube_url" type="text" placeholder="Enter youtube URL" class="input-field">
+          <button @click="send" class="send-button">Send</button>
+        </div>
+        <div class="summary-container">
+          <div v-if="is_loading">Loading...</div>
+          <div v-else>
+              {{ summary }}
+        </div>
       </div>
     </div> 
    </div>
@@ -33,7 +36,7 @@
 <style>
 
 body{
-  background-color:rgb(255, 253, 208);
+  background-color:rgb(233, 150, 122);
   margin: 0;
 }
 
@@ -53,6 +56,45 @@ body{
   font-weight: bold;
 }
 
+.input-container {
+  border: 2px solid #333; 
+  border-radius: 50px;
+  padding: 40px;
+  margin-bottom: 50px;
+  background-color: rgb(143, 188, 143); 
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.send-button {
+  padding: 10px;
+  cursor: pointer;
+  background-color: slateblue;
+  color: white;
+  border: none;
+  border-radius: 30px;
+}
+
+.summary-container {
+  max-width: 800px;
+  margin: 0 auto; 
+  text-align: center;
+}
+
+/* .summary-container {
+  border: 2px solid #333; 
+  border-radius: 8px;
+  padding: 20px;
+  background-color: white; 
+} */
+
+
 
    .text-center {
       text-align: center;
@@ -65,4 +107,4 @@ body{
    .justify-content-center {
        justify-content: center;
    }
-</style>
+</style>  
