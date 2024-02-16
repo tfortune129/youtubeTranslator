@@ -1,12 +1,15 @@
 <template>
   <div class="d-flex justify-content-center">
-      <h2 class="text-center">App</h2>
-      <input v-model="youtube_url" type="text" placeholder="Enter youtube URL">
-      <button @click="send">Send</button>
-      <div v-if="is_loading">Loading</div>
-      <div v-else>
+    <div class="upper-left-text">Youtube Translator</div>
+      <!-- <h2 class="text-center">App</h2> -->
+      <div class="center-container">
+        <input v-model="youtube_url" type="text" placeholder="Enter youtube URL">
+        <button @click="send">Send</button>
+        <div v-if="is_loading">Loading...</div>
+        <div v-else>
            {{ summary }}
       </div>
+    </div> 
    </div>
 </template>
 
@@ -28,6 +31,29 @@
 </script>
 
 <style>
+
+body{
+  background-color:rgb(255, 253, 208);
+  margin: 0;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.upper-left-text {
+  position: absolute;
+  top: 10x;
+  left: 10x;
+  color: black;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+
    .text-center {
       text-align: center;
    }

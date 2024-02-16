@@ -3,5 +3,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   typescript: {
     strict: false
-  }
+  },
+  modules: [
+    'nuxt-primevue'
+  ],
+  primevue: {
+    usePrimeVue: true
+  } 
 })

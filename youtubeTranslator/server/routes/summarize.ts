@@ -15,50 +15,14 @@ export default defineEventHandler(async (event) => {
                             return []
                         })
 
-    // Output of the transcript comes back in this form
-    /*
-    [
-        {
-          text: 'The hydrogen bomb is a staged thermonuclear  ',
-          duration: 2360,
-          offset: 2720
-        },
-        {
-          text: 'weapon capable of terrifying \namounts of destructive power.',
-          duration: 3960,
-          offset: 5080
-        },
-        {
-          text: 'The United States moved ahead with the hydrogen \n' +
-            'bomb as a response to the first Soviet atomic  ',
-          duration: 4840,
-          offset: 9040
-        }
-        ...
-    ]
-    */
 
     // Convert the transcript object array to an array of strings with the text properties
     const str_array: string[] = transcript.map(({ text }) => text)
 
-    // str_array output will now look like this
-    /*
-    [
-       'The hydrogen bomb is a staged thermonuclear  ',
-       'weapon capable of terrifying \namounts of destructive power.',
-       'The United States moved ahead with the hydrogen \n' +
-            'bomb as a response to the first Soviet atomic  ',
-        ...
-    ]
-    */
 
     // Join all the string elements of the array into a single string
     const str: string = str_array.join(' ')
 
-    // str out will now look like this 
-    /*
-    'The hydrogen bomb is a staged thermonuclear weapon capable of terrifying \namounts of destructive power. The United States moved ahead with the hydrogen \n bomb as a response to the first Soviet atomic ...'
-    */
 
     // Initialize Open AI
     const openai = new OpenAI({
